@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ismt_weather_application/models/ismt_weather_app_moment_weather_model.dart';
-import 'package:flutter_ismt_weather_application/services/ismt_weather_app_current_weather_api_service.dart';
-import 'package:flutter_ismt_weather_application/widgets/ismt_weather_app_additional_information.dart';
 import 'package:flutter_ismt_weather_application/widgets/ismt_weather_app_moment_weather.dart';
+import '../models/ismt_weather_app_moment_weather_model.dart';
+import '../services/ismt_weather_app_current_weather_api_service.dart';
+import '../widgets/ismt_weather_app_additional_information.dart';
+import 'ismt_weather_app_profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,12 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color(0xFFf9f9f9),
         elevation: 0.0,
         title: const Text(
-          'iSTM Weathering',
+          'iSMT Weathering',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()));
+          },
           icon: const Icon(
             Icons.menu,
             color: Colors.black,
@@ -48,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 momentWeather(
-                  Icons.wb_sunny_rounded,
+                  Icons.wb_sunny_outlined,
                   '${dataMomentWeather!.temp}°',
-                  '${dataMomentWeather!.cityname}',
+                  '${dataMomentWeather!.name}',
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -63,24 +67,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 20.0,
                 ),
                 additionalInformation(
                     '${dataMomentWeather!.wind}',
-                    '${dataMomentWeather!.humidity}',
                     '${dataMomentWeather!.pressure}',
-                    '${dataMomentWeather!.clouds}'),
+                    '${dataMomentWeather!.coordLatitude}',
+                    '${dataMomentWeather!.coordLongitude}',
+                    '${dataMomentWeather!.visibility}',
+                    '${dataMomentWeather!.temp_min}',
+                    '${dataMomentWeather!.temp_max}',
+                    '${dataMomentWeather!.humidity}'),
               ],
             );
           } else if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else {
             return Container(
-              child: Center(child: Text('Error Loading Data')),
+              child: const Center(child: Text('Error Loading Data')),
             );
           }
         }),

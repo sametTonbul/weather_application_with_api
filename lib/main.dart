@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ismt_weather_application/views/ismt_weather_app_home_screen.dart';
+import 'views/ismt_weather_app_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

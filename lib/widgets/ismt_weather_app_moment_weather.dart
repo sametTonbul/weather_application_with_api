@@ -11,21 +11,21 @@ Widget momentWeather(IconData icon, String temp, String location) {
           color: Colors.orange,
           size: 64,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10.0,
         ),
         Text(
           temp,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 48,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10.0,
         ),
         Text(
           location,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
             color: Colors.blueAccent,
           ),
