@@ -26,7 +26,7 @@ class MomentWeather {
       this.coordLatitude,
       this.coordLongitude,
       // this.description,
-      //this.icon);
+      //this.icon,
       //this.sunrise,
       //this.sunset,
       this.temp_max,

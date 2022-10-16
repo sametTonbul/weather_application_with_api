@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
+import '../models/ismt_weather_app_moment_weather_model.dart';
 
-Widget momentWeather(IconData icon, String temp, String location) {
+MomentWeather? dataMomentWeather;
+Widget momentWeather(String temp, String location) {
   return Container(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
-          icon,
-          color: Colors.orange,
-          size: 64,
-        ),
-        const SizedBox(
-          height: 10.0,
-        ),
         Text(
           temp,
           style: const TextStyle(

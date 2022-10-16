@@ -52,7 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 momentWeather(
-                  Icons.wb_sunny_outlined,
                   '${dataMomentWeather!.temp}°',
                   '${dataMomentWeather!.name}',
                 ),

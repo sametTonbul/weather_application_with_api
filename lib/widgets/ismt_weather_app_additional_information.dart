@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 Widget additionalInformation(
-    String wind,
-    String pressure,
-    String coordLatitude,
-    String coordLongitude,
-    String visibility,
-    String temp_min,
-    String temp_max,
-    String humidity) {
+  String wind,
+  String pressure,
+  String coordLatitude,
+  String coordLongitude,
+  String visibility,
+  String temp_min,
+  String temp_max,
+  String humidity,
+) {
   return Container(
     width: double.infinity,
     padding: const EdgeInsets.all(18),
